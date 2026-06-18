@@ -98,7 +98,7 @@ def update(ticker, _):
 
     # KPI cards
     live_price, live_chg = get_live_price(ticker)
-    sub_s = summary[summary["ticker"] == ticker]
+    sub_s = summary[summary["symbol"] == ticker]
     avg_sent = sub_s["avg_compound"].mean() if not sub_s.empty else 0
     n_arts   = int(sub_s["num_articles"].sum()) if not sub_s.empty else 0
     if live_price is None and not sub_s.empty:
