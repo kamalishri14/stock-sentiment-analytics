@@ -124,6 +124,7 @@ def update(ticker, _):
     ])
 
     # Candlestick
+    print("Available columns:", prices.columns)
     sub_p = prices[prices["ticker"]==ticker].sort_values("date")
     candle = go.Figure(go.Candlestick(
         x=sub_p["date"], open=sub_p["open"], high=sub_p["high"],
